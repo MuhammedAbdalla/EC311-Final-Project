@@ -1,3 +1,4 @@
+// Takes in encoded 7-segment value
 module seven_segment_decoder(num, display);
     input [3:0] num;
     output [6:0] display;
