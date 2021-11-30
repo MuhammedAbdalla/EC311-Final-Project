@@ -1,45 +1,43 @@
-// Can add more clocks for 3 different levels
+
+module clock_divider(clock_in, clock_out_1khz, clock_out_1hz, clock_out_half_hz, clock_out_2hz);
+
+    input clock_in;
+    output reg clock_out_1khz = 1'b0;
+    output reg clock_out_1hz = 1'b0;
+    output reg clock_out_half_hz = 1'b0;
+    output reg clock_out_2hz = 1'b0;
+
+    reg [15:0] count_1khz = 16'd0;
+    reg [25:0] count_1hz = 26'd0;
+    reg [26:0] count_half_hz = 27'd0;
+    reg [24:0] count_2hz = 25'd0;
+
+    parameter [15:0] MAX_1khz = 16'd50000;
+    parameter [25:0] MAX_1hz = 26'd50000000;
+    parameter [26:0] MAX_half_hz = 27'd100000000;
+    parameter [24:0] MAX_2hz = 25'd25000000;
 
 
-//Clock divider splits the 100MHz clock into 1kHz and 1Hz
-//1kHz clock output is for the refresh rate of the 7-seg displays
-//1Hz clock out put is the for the automatic counting mode for counter16
-module clock_divider(clk, reset, khz, hz);
-    input clk, reset;
-    output khz, hz;
-    
-    reg khz, hz;
-    
-    parameter [50:0] zero = 9'd000000000;
-    
-    reg [50:0] c_khz = zero;
-    reg [50:0] c_hz = zero;
-    
-    parameter [50:0] divHZ = 50'd100000000;
-    parameter [50:0] divKHZ = 50'd10000;
-    //implement reset for all internal counter
-    always @ (posedge clk or negedge reset) begin
-        if (reset == 1'b0) begin
-            c_khz <= zero;
-            c_hz <= zero;
-            khz <= 1'b0;
-            hz <= 1'b0;
-         end else begin
-            
-            // kHz clock handler
-            c_khz = c_khz + 50'd1;
-            if (c_khz >= (divKHZ-1)) begin
-                c_khz = zero;
-            end
-            khz = (c_khz<divKHZ/2)?1'b1:1'b0;
-            
-            // Hz clock handler
-            c_hz = c_hz + 50'd1;
-            if (c_hz  >= (divHZ-1)) begin
-                c_hz <= zero;
-            end  
-            hz = (c_hz<divHZ/2)?1'b1:1'b0;
-                      
-         end
-     end
+    always @(posedge clock_in) begin
+        count_1hz <= count_1hz + 1'd1;
+        count_1khz <= count_1khz + 1'd1;
+        count_half_hz <= count_half_hz + 1'd1;
+        count_2hz <= count_2hz + 1'd1;
+        if (count_1hz == (MAX_1hz-1'd1)) begin
+            clock_out_1hz <= ~clock_out_1hz;
+            count_1hz <= 26'd0;
+        end
+        if (count_1khz == (MAX_1khz-1'd1)) begin
+            clock_out_1khz <= ~clock_out_1khz;
+            count_1khz <= 16'd0;
+        end
+        if (count_half_hz  == (MAX_half_hz-1'd1)) begin
+            clock_out_half_hz <= ~clock_out_half_hz;
+            count_half_hz <= 27'd0;
+        end
+        if (count_2hz  == (MAX_2hz - 1'd1)) begin
+            clock_out_2hz <= ~clock_out_2hz;
+            count_2hz = 25'd0;
+        end
+    end//always
 endmodule
