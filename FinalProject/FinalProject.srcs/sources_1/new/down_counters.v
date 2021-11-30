@@ -18,6 +18,7 @@ module down_counter5(clk_hz, reset, count5_out, count5_enable);
             end
         end
     end
+endmodule
     
  
  module down_counter30(clk_hz, reset, count30_enable);
@@ -38,5 +39,7 @@ module down_counter5(clk_hz, reset, count5_out, count5_enable);
             end
         end
     end
+ endmodule
+ 
     
  
