@@ -1,7 +1,7 @@
 //Code for seven segment decoder
 module seven_segment_decoder(
     select_i,
-    count_i,
+    num_i,
     seg_o);
     
     input [1:0] select_i;
