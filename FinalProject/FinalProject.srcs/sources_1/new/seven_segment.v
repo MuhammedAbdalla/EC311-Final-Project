@@ -7,7 +7,8 @@ module seven_segment_decoder(
     
     input [1:0] select_i;
     input [7:0] num_i;
-    input [3:0] count5_i;
+    input [3:0] mux1_out;
+    input [3:0] mux2_out;
     output reg [6:0] seg_o;
     reg [3:0] d_i;
     
@@ -15,7 +16,8 @@ module seven_segment_decoder(
         case (select_i)
             2'b00: d_i = num_i[3:0];
             2'b01: d_i = num_i[7:4];
-            2'b10: d_i = count5_i;
+            2'b10: d_i = mux1_out;
+            2'b11: d_i = mux2_out;
         endcase
         case (d_i)
             4'b0000: seg_o = 7'b0000001;
