@@ -8,10 +8,9 @@ module mux2to1(
     );
     
     input select_i;
-    input in0;
-    input in1;
-    output out_o;
-    reg out_o;
+    input [3:0] in0;
+    input [3:0] in1;
+    output reg [3:0] out_o;
     
     always @(*) begin
         case (select_i)
