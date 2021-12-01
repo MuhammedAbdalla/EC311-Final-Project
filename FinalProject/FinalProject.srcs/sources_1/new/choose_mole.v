@@ -1,25 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/29/2021 10:10:37 PM
-// Design Name: 
-// Module Name: whackamole
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
     input clock_in;
     input reset_in;
@@ -46,8 +24,8 @@ module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
         end else if ((buttons_in[4] == 1'b1) && (led_out[4] == 1'b1)) begin
             led_out = 5'b00000;
             increment_out = 1'b1;
-        end 
-    end//always
+        end
+    end
     always@(*) begin
         w1= Y[1]^Y[0];
         Y_next={w1,Y[2:1]}; 
@@ -58,7 +36,7 @@ module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
             3'b011: led_out = 5'b00100;
             3'b100: led_out = 5'b01000;
             3'b101: led_out = 5'b10000;
-            3'b110: led_out = 5'b10000;
+            3'b110: led_out = 5'b00010;
             3'b111: led_out = 5'b00100;
         endcase
     end //always
@@ -68,12 +46,9 @@ module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
         increment_out = 1'b0;
         if (reset_in==1'b0) begin;
             Y<=3'b001;
-            Y_next <= 3'b000;
+     
         end else begin
             Y<= Y_next;
         end
     end //always 
- 
-        
- 
 endmodule
