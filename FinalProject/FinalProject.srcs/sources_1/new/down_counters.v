@@ -24,14 +24,14 @@ endmodule
 
  module down_counter5(clk_hz, reset, count30_out, count30_enable);
     input clk_hz, reset;
-    output reg [4:0] count30_out = 5'b11110;
+    output reg [5:0] count30_out = 6'b011110;
     output reg count30_enable = 1'b0;
     
     
     // count down from 30
     always @ (posedge clk_hz or negedge reset) begin
         if (reset == 1'b0) begin
-            count30_out = 5'b11110;
+            count30_out = 6'b011110;
             count30_enable = 1'b0;
         end else begin
             count30_out = count30_out - 1'b1;
