@@ -1,3 +1,25 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 11/29/2021 10:10:37 PM
+// Design Name: 
+// Module Name: whackamole
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
     input clock_in;
     input reset_in;
@@ -8,7 +30,7 @@ module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
     reg [2:0] Y_next;
     reg w1;
     
-    always @(*) begin   //checks if the corresponding LED is on whenever the user pushes a button
+    always @(buttons_in) begin   //checks if the corresponding LED is on whenever the user pushes a button
         if ((buttons_in[0] == 1'b1) && (led_out[0] == 1'b1)) begin
             led_out = 5'b00000;
             increment_out = 1'b1;
@@ -25,7 +47,8 @@ module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
             led_out = 5'b00000;
             increment_out = 1'b1;
         end 
-        
+    end//always
+    always@(*) begin
         w1= Y[1]^Y[0];
         Y_next={w1,Y[2:1]}; 
         case (Y_next)
@@ -36,7 +59,7 @@ module whackamole(clock_in, reset_in, buttons_in, increment_out, led_out);
             3'b100: led_out = 5'b01000;
             3'b101: led_out = 5'b10000;
             3'b110: led_out = 5'b10000;
-            3'b111: led_out = 5'b00010;
+            3'b111: led_out = 5'b00100;
         endcase
     end //always
     
