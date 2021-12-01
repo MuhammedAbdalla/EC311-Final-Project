@@ -22,7 +22,7 @@ endmodule
     
  
 
- module down_counter5(clk_hz, reset, count30_out, count30_enable);
+ module down_counter30(clk_hz, reset, count30_out, count30_enable);
     input clk_hz, reset;
     output reg [5:0] count30_out = 6'b011110;
     output reg count30_enable = 1'b0;
