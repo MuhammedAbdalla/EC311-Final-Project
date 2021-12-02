@@ -33,10 +33,11 @@ module down_counter30(clk_hz, reset, enable, count30_out, count30_enable);
             count30_out = 6'b011110;
             count30_enable = 1'b1;
         end else begin
-            if(enable == 1'b1) begin
+            if(enable == 1'b1 && count30_out != 1'b0) begin
                 count30_out = count30_out - 1'b1;
-                if (count30_out == 0) begin
-                    count30_enable = 1'b0;
+                count30_enable = 1'b0;
+                if (count30_out == 6'b0) begin
+                    count30_enable = 1'b1;
                 end
             end
         end

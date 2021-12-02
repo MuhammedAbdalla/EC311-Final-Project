@@ -1,3 +1,4 @@
+
 module top(clock_in, reset_in, level_select_in, buttons_in, digit_select_out, digit_out, led_out);
     input clock_in;
     input [1:0] level_select_in;
@@ -24,14 +25,17 @@ module top(clock_in, reset_in, level_select_in, buttons_in, digit_select_out, di
     wire increment_score;
     wire [5:0] score_bin;
     wire [7:0] score_bcd;
+    wire [2:0] lsfr_out;
     
     clock_divider CD(.clock_in(clock_in), .clock_out_1khz (clock_1khz), .clock_out_1hz(clock_1hz), .clock_out_half_hz(clock_half_hz), .clock_out_2hz(clock_2hz));
     
-    mux3to1 M3TO1( .select_i(level_select_in), .in0(clock_half_hz), .in1(clock_1hz), .in2(clock_2_hz), .out_o(mux_out));
+    mux3to1 M3TO1( .select_i(level_select_in), .in0(clock_half_hz), .in1(clock_1hz), .in2(clock_2hz), .out_o(mux3_out));
     
     debouncer DB(.clock_in(clock_in), .reset_in(reset_in), .buttons_in(buttons_in), .buttons_out(debouncer_out));
     
-    whackamole WM(.clock_in(mux_out), .reset_in(game_stop), .buttons_in(debouncer_out), .increment_out(increment_score), .led_out(led_out));
+    lsfr LSFR(.clk (mux3_out) , .reset(reset_in), .enable(game_stop), .Y(lsfr_out));
+    
+    whackamole ML (.led_bin(lsfr_out),.buttons_in(debouncer_out),.enable_in(game_stop), .led_out(led_out), .increment_out(increment_score));
     
     counter6 CT6(.reset(reset_in), .increment_in(increment_score), .count_o(score_bin));  
     
