@@ -9,11 +9,13 @@ module down_counter5(clk_hz, reset, count5_out, count5_enable);
     always @ (posedge clk_hz or negedge reset) begin
         if (reset == 1'b0) begin
             count5_out = 3'b101;
-            count5_enable = 1'b1;
+            count5_enable = 1'b0;
         end else begin
-            count5_out = count5_out - 1'b1;
-            if (count5_out == 0) begin
-                count5_enable = 1'b1;
+             if (count5_out != 1'b0) begin
+                count5_out = count5_out - 1'b1;
+                if (count5_out == 0) begin
+                    count5_enable = 1'b1;
+                end
             end
         end
     end
@@ -33,7 +35,7 @@ module down_counter30(clk_hz, reset, enable, count30_out, count30_enable);
             count30_out = 6'b011110;
             count30_enable = 1'b1;
         end else begin
-            if(enable == 1'b1 && count30_out != 1'b0) begin
+            if (enable == 1'b1 && count30_out != 1'b0) begin
                 count30_out = count30_out - 1'b1;
                 count30_enable = 1'b0;
                 if (count30_out == 6'b0) begin

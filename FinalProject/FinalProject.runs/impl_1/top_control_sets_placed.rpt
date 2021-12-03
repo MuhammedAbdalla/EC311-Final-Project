@@ -1,0 +1,99 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Dec  2 23:58:58 2021
+| Host         : ECE-PHO115-07 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    21 |
+|    Minimum number of control sets                        |    21 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   105 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    21 |
+| >= 0 to < 4        |    12 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           17 |
+| No           | No                    | Yes                    |              18 |            7 |
+| No           | Yes                   | No                     |              76 |           25 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              25 |            7 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------+-----------------------------+-------------------------------+------------------+----------------+
+|          Clock Signal          |        Enable Signal        |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
++--------------------------------+-----------------------------+-------------------------------+------------------+----------------+
+|  M3TO1/out_o_reg_i_2_n_0       |                             |                               |                1 |              1 |
+|  DB/buttons_out_reg[4]_i_2_n_0 |                             |                               |                1 |              1 |
+|  DB/buttons_out_reg[4]_i_2_n_0 |                             | DB/buttons_out_reg[3]_i_2_n_0 |                1 |              1 |
+|  DB/buttons_out_reg[4]_i_2_n_0 |                             | DB/buttons_out_reg[4]_i_3_n_0 |                1 |              1 |
+|  DB/buttons_out_reg[4]_i_2_n_0 |                             | DB/buttons_out_reg[1]_i_2_n_0 |                1 |              1 |
+|  DB/buttons_out_reg[4]_i_2_n_0 |                             | DB/buttons_out_reg[0]_i_2_n_0 |                1 |              1 |
+|  DB/buttons_out_reg[4]_i_2_n_0 |                             | DB/buttons_out_reg[2]_i_2_n_0 |                1 |              1 |
+|  CD/CLK                        |                             | DB/reset_in                   |                2 |              2 |
+| ~DC30/game_stop                |                             |                               |                2 |              3 |
+|  DC30/count30_enable_reg_0[0]  |                             |                               |                1 |              3 |
+|  M3TO1/mux3_out                |                             | DB/reset_in                   |                1 |              3 |
+|  clock_in_IBUF_BUFG            |                             | DB/reset_in                   |                1 |              3 |
+|  CD/clock_1hz                  |                             | DB/reset_in                   |                1 |              4 |
+|  ML/led_out_reg[4]_i_2_n_0     |                             | LSFR/AR[0]                    |                2 |              5 |
+|  LSFR/count30_enable_reg       |                             | DB/reset_in                   |                2 |              6 |
+|  CD/clock_1hz                  | DC30/count30_enable_i_1_n_0 | DB/reset_in                   |                3 |              7 |
+|  clock_in_IBUF_BUFG            |                             | CD/clock_out_1khz             |                4 |             15 |
+|  clock_in_IBUF_BUFG            | DB/deb_count[17]_i_1_n_0    | DB/reset_in                   |                4 |             18 |
+|  clock_in_IBUF_BUFG            |                             | CD/clock_out_1hz              |                7 |             25 |
+|  clock_in_IBUF_BUFG            |                             | CD/clock_out_half_hz          |                7 |             26 |
+|  clock_in_IBUF_BUFG            |                             |                               |               12 |             32 |
++--------------------------------+-----------------------------+-------------------------------+------------------+----------------+
+
+

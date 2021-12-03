@@ -1,0 +1,456 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22132 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 810.383 ; gain = 177.672
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/top.v:2]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/clock_divider.v:2]
+	Parameter MAX_1khz bound to: 16'b1100001101010000 
+	Parameter MAX_1hz bound to: 26'b10111110101111000010000000 
+	Parameter MAX_half_hz bound to: 27'b101111101011110000100000000 
+	Parameter MAX_2hz bound to: 25'b1011111010111100001000000 
+WARNING: [Synth 8-6090] variable 'count_2hz' is written by both blocking and non-blocking assignments, entire logic could be removed [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/clock_divider.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/clock_divider.v:2]
+INFO: [Synth 8-6157] synthesizing module 'mux3to1' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/mux3to1.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/mux3to1.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'mux3to1' (2#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/mux3to1.v:2]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/debouncer.v:23]
+	Parameter MIN bound to: 18'b000000000000000000 
+	Parameter MAX bound to: 18'b111111111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (3#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/debouncer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'down_counter5' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/down_counters.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'down_counter5' (4#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/down_counters.v:2]
+INFO: [Synth 8-6157] synthesizing module 'down_counter30' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/down_counters.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'down_counter30' (5#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/down_counters.v:26]
+INFO: [Synth 8-6157] synthesizing module 'lsfr' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/lsfr.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'lsfr' (6#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/lsfr.v:4]
+INFO: [Synth 8-6157] synthesizing module 'whackamole' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/whack_a_mole.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/whack_a_mole.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'whackamole' (7#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/whack_a_mole.v:4]
+INFO: [Synth 8-6157] synthesizing module 'counter6' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/counter6.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'counter6' (8#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/counter6.v:3]
+INFO: [Synth 8-6157] synthesizing module 'binary_to_bcd' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/binary_to_bcd.v:23]
+	Parameter MAX bound to: 3'b101 
+INFO: [Synth 8-6155] done synthesizing module 'binary_to_bcd' (9#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/binary_to_bcd.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2to1' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/mux2to1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mux2to1' (10#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/mux2to1.v:3]
+INFO: [Synth 8-6157] synthesizing module 'counter2' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/counter2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'counter2' (11#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/counter2.v:3]
+INFO: [Synth 8-6157] synthesizing module 'seven_segment_decoder' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/seven_segment.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'seven_segment_decoder' (12#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/seven_segment.v:2]
+INFO: [Synth 8-6157] synthesizing module 'display_control' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/display_control.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'display_control' (13#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/display_control.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'top' (14#1) [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/top.v:2]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 873.711 ; gain = 241.000
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 873.711 ; gain = 241.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 873.711 ; gain = 241.000
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 996.059 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 996.059 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'out_o_reg' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/mux3to1.v:19]
+WARNING: [Synth 8-327] inferring latch for variable 'buttons_out_reg' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/debouncer.v:90]
+WARNING: [Synth 8-327] inferring latch for variable 'button_in_reg' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/debouncer.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'Y_next_reg' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/lsfr.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'led_out_reg' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/whack_a_mole.v:17]
+WARNING: [Synth 8-327] inferring latch for variable 'led_current_reg' [X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.srcs/sources_1/new/whack_a_mole.v:15]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 7     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 8     
+	   4 Input      4 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 10    
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module clock_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+Module mux3to1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      1 Bit        Muxes := 2     
+Module debouncer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 2     
+Module down_counter5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module down_counter30 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module lsfr 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      3 Bit        Muxes := 1     
+Module whackamole 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module counter6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+Module binary_to_bcd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+Module mux2to1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module counter2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+Module seven_segment_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+Module display_control 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:30 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:30 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 996.059 ; gain = 363.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    30|
+|3     |LUT1   |    10|
+|4     |LUT2   |    34|
+|5     |LUT3   |    16|
+|6     |LUT4   |    33|
+|7     |LUT5   |    30|
+|8     |LUT6   |    29|
+|9     |FDCE   |    35|
+|10    |FDPE   |     8|
+|11    |FDRE   |    98|
+|12    |LD     |     8|
+|13    |LDC    |    10|
+|14    |IBUF   |     9|
+|15    |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+---------------+------+
+|      |Instance |Module         |Cells |
++------+---------+---------------+------+
+|1     |top      |               |   367|
+|2     |  CD     |clock_divider  |   158|
+|3     |  CT2    |counter2       |    13|
+|4     |  CT6    |counter6       |    26|
+|5     |  DB     |debouncer      |    72|
+|6     |  DC30   |down_counter30 |    27|
+|7     |  DC5    |down_counter5  |     9|
+|8     |  LSFR   |lsfr           |    24|
+|9     |  M3TO1  |mux3to1        |     2|
+|10    |  ML     |whackamole     |    10|
++------+---------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 999.633 ; gain = 366.922
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 999.633 ; gain = 244.574
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 999.633 ; gain = 366.922
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 3 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1014.422 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  LD => LDCE: 5 instances
+  LD => LDCE (inverted pins: G): 3 instances
+  LDC => LDCE: 10 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:48 . Memory (MB): peak = 1014.422 ; gain = 660.164
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1014.422 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'X:/My Documents/ProgramFiles/ECE/EC311/EC311-Final-Project/FinalProject/FinalProject.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  2 23:57:55 2021...
