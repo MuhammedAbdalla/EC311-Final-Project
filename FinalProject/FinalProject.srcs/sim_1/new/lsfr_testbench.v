@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/29/2021 09:03:17 PM
+// Create Date: 12/02/2021 01:48:20 AM
 // Design Name: 
-// Module Name: down_counters_t
+// Module Name: lsfr_testbench
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,19 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module down_counters_t();
-    reg clk, reset;
-    wire c5, c30;
+module lsfr_testbench(
+
+    );
+    reg clk;
+    reg reset;
+    reg enable;
+    wire [2:0] Y;
     
-    down_counters dc(.clk_hz(clk), .reset(reset), .count5_out(c5), .count30_out(c30));
+    lsfr LSFR(.clk(clk), .reset(reset), .enable(enable), .Y(Y));
     
     initial begin
-        clk  = 1'b1;
-        reset = 1'b0;
-        #1 reset = 1'b1;
+    clk = 1'b0;
+    reset = 1'b1;
+    enable = 1'b0;
     end
     
     always begin
-        #0.5 clk = (clk == 1'b1) ? 1'b0: 1'b1;
+    #5 clk = 1'b1;
+    #5 clk = 1'b0;
     end
+    
+    always begin
+    #2500 enable = 1'b1;
+    end
+    
 endmodule
