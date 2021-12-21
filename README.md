@@ -1,3 +1,3 @@
-# EC311-Final-Project
-1) git clone this repository
-2) all .v verilog source files are under FinalProject/FinalProject.srcs/new
+The goal of this project is to recreate the game Whack-a-mole on an FPGA. Moles are represented by LEDs 
+and they can be whacked using the corresponding push buttons of the FPGA.
+All the code for this project is under the folder FinalProject, then FinalProject.srcs

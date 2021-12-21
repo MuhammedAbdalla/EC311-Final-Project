@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module binary_to_bcd(binary_in, bcd_out);
+module binary_to_bcd(binary_in, bcd_out); //uses double dabble algorithm
     input [5:0] binary_in;
     output reg [7:0] bcd_out = 8'b0;
     reg [3:0] ones = 4'b0000;
