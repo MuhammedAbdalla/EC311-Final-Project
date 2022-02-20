@@ -1,4 +1,4 @@
-
+//clock divider to generate three clock speeds (0.5hz, 1hz, 2hz) from the built in 100MHz clock
 `timescale 1ns / 1ps
 module clock_divider(clock_in, clock_out_1khz, clock_out_1hz, clock_out_half_hz, clock_out_2hz);
 
@@ -13,6 +13,7 @@ module clock_divider(clock_in, clock_out_1khz, clock_out_1hz, clock_out_half_hz,
     reg [26:0] count_half_hz = 27'd0;
     reg [24:0] count_2hz = 25'd0;
 
+    //multiple parameters for different clock speeds
     parameter [15:0] MAX_1khz = 16'd50000;
     parameter [25:0] MAX_1hz = 26'd50000000;
     parameter [26:0] MAX_half_hz = 27'd100000000;
