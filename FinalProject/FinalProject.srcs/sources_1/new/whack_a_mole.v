@@ -1,6 +1,3 @@
-// Utilized the rand_num_generator to light up the LED correspondin 
-// to integer value 0 <= I <= 15
-
 module whackamole(led_bin, buttons_in, enable_in, led_out, increment_out);
     input enable_in;
     input [2:0] led_bin;
