@@ -1,3 +1,4 @@
+
 `timescale 1ns / 1ps
 module clock_divider(clock_in, clock_out_1khz, clock_out_1hz, clock_out_half_hz, clock_out_2hz);
 
