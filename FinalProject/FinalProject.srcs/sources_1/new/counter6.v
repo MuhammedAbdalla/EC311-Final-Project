@@ -1,5 +1,4 @@
 `timescale 1ns / 1ps
-//counter6 is a 6 bit counter and the main counter for the digital system.
 module counter6(reset, increment_in, count_o);
     input reset, increment_in;
     output [5:0] count_o;
